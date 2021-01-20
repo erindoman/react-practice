@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Button from './components/Button/Button'
 
-const buttonIs = ['red', 'yellow', 'blue', 'green']
+const buttonIs = ['0', '1', '2', '3']
 
 class App extends Component {
   state = { 
