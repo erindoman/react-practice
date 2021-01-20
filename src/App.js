@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Button from './components/Button/Button'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const buttonIs = ['red', 'yellow', 'blue', 'green']
+
+class App extends Component {
+  state = { 
+    selectedButtonIdx: 0
+   }
+
+   handleButtonChange = (newIdx) => {
+     this.setState({ selectedButtonIdx: newIdx })
+   }
+
+  render() { 
+    return ( 
+      <div className="App">
+        <header className="App-header">Button Picker</header>
+      <main>
+        <Button 
+          handleButtonChange={this.handleButtonChange}
+          selectedButtonIdx={this.state.selectedButtonIdx}
+          buttonIs={buttonIs}
+        />
+      </main>
+      </div>
+     );
+  }
 }
-
+ 
 export default App;
